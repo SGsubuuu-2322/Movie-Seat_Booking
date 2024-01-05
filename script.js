@@ -5,9 +5,9 @@ const count = document.getElementById("count");
 const total = document.getElementById("total");
 
 const movieSelect = document.getElementById("movie");
-let ticketPrice = +movieSelect.value;
-
 populateUI();
+
+let ticketPrice = +movieSelect.value;
 
 function updateSelectedMovie(movieIndex, moviePrice) {
   localStorage.setItem("movieIndex", movieIndex);
@@ -36,6 +36,11 @@ function populateUI() {
         seat.classList.add("selected");
       }
     });
+
+    const selectedMovieIndex = localStorage.getItem("movieIndex");
+    if (selectedMovieIndex !== null) {
+      movieSelect.selectedIndex = selectedMovieIndex;
+    }
   }
 }
 
@@ -55,3 +60,5 @@ container.addEventListener("click", (e) => {
     updatedSelectedCount();
   }
 });
+
+updatedSelectedCount();
