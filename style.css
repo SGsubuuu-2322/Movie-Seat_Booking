@@ -32,6 +32,11 @@ body {
   -webkit-appearance: none;
 }
 
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
 .seat {
   background-color: #444451;
   height: 12px;
@@ -60,7 +65,49 @@ body {
   cursor: pointer;
   transform: scale(1.2);
 }
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.2);
+  color: #777;
+  padding: 5px 10px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 2px;
+}
 
 .row {
   display: flex;
+}
+
+.screen {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 10px 15px rgba(255, 255, 255, 0.4);
+}
+
+p.text {
+  margin: 6px 0;
+}
+
+.text span {
+  color: #6feaf6;
 }
